@@ -42,6 +42,11 @@ public class EnvironmentApiTestCase extends AbstractTestCase {
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		
+		// Query
+		result = postRequest(REST_PREFIX + "/cd/environments/query", "classpath:/cd/environment/query.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		
 		// ADD
 		result = postRequest(REST_PREFIX + "/cd/environments", "classpath:/cd/environment/add.json");
 		Assert.assertTrue(200 == result.getStatus());
