@@ -35,6 +35,7 @@ import com.primeton.devops.test.util.HttpClientUtil.HttpResult;
 public abstract class AbstractTestCase {
 	
 	protected static final String PATH_PREFIX = "classpath:"; //$NON-NLS-1$
+	protected static final String REST_PREFIX = "/rest/services"; //$NON-NLS-1$
 	
 	protected final String uid = new SimpleDateFormat("yyyyMMddHHmmSS").format(new Date());
 
@@ -78,7 +79,7 @@ public abstract class AbstractTestCase {
 	 * @throws Exception
 	 */
 	protected HttpResult getRequest(String restUrl, Map<String, String> headers) throws Exception {
-		return HttpClientUtil.sendRequest("GET", restUrl, headers); //$NON-NLS-1$
+		return HttpClientUtil.sendRequest("GET", HttpClientUtil.getFullURL(restUrl), headers); //$NON-NLS-1$
 	}
 	
 	/**
@@ -97,7 +98,7 @@ public abstract class AbstractTestCase {
 	 * @throws Exception 
 	 */
 	protected HttpResult deleteRequest(String restUrl, Map<String, String> headers) throws Exception {
-		return HttpClientUtil.sendRequest("DELETE", restUrl, headers); //$NON-NLS-1$
+		return HttpClientUtil.sendRequest("DELETE", HttpClientUtil.getFullURL(restUrl), headers); //$NON-NLS-1$
 	}
 	
 	/**
@@ -120,7 +121,7 @@ public abstract class AbstractTestCase {
 		if (null != entity && entity instanceof String && ((String)entity).startsWith(PATH_PREFIX)) {
 			entity = getResourceAsString((String)entity);
 		}
-		return HttpClientUtil.sendRequest("PUT", restUrl, headers, entity); //$NON-NLS-1$
+		return HttpClientUtil.sendRequest("PUT", HttpClientUtil.getFullURL(restUrl), headers, entity); //$NON-NLS-1$
 	}
 	
 	/**
@@ -164,7 +165,7 @@ public abstract class AbstractTestCase {
 	 * @throws Exception
 	 */
 	protected HttpResult postRequest(String restUrl, Map<String, String> headers, Object entity) throws Exception {
-		return HttpClientUtil.sendRequest("POST", restUrl, headers, entity); //$NON-NLS-1$
+		return HttpClientUtil.sendRequest("POST", HttpClientUtil.getFullURL(restUrl), headers, entity); //$NON-NLS-1$
 	}
 	
 	/**

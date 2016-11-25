@@ -8,6 +8,10 @@
 
 package com.primeton.devops.cd.env;
 
+import org.junit.Assert;
+
+import com.primeton.devops.test.util.HttpClientUtil.HttpResult;
+
 /**
  * EnvironmentApiTestCase.
  *
@@ -20,7 +24,17 @@ public class EnvironmentApiTestCase extends AbstractTestCase {
 	 */
 	@Override
 	public void test() throws Exception {
+		HttpResult result = getRequest(REST_PREFIX + "/cd/environments");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
 		
+		result = getRequest(REST_PREFIX + "/cd/environments?cascade=false");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		
+		result = getRequest(REST_PREFIX + "/cd/environments?cascade=true");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
 	}
 
 }
