@@ -191,8 +191,8 @@ public class HttpClientUtil implements Constants {
 		if (null == client || StringUtils.isEmpty(url)) {
 			return null;
 		}
-		if ("GET".equalsIgnoreCase(method)
-				|| "DELETE".equalsIgnoreCase(method)) {
+		if ("GET".equalsIgnoreCase(method) //$NON-NLS-1$
+				|| "DELETE".equalsIgnoreCase(method)) { //$NON-NLS-1$
 			if (null == entity) {
 				return sendRequest(method, url, headers);
 			} else {
@@ -213,7 +213,7 @@ public class HttpClientUtil implements Constants {
 				request.setEntity((HttpEntity) entity);
 			} else if (entity instanceof String) {
 				request.setEntity(new StringEntity((String) entity,
-						ContentType.TEXT_PLAIN));
+						ContentType.APPLICATION_JSON)); // ContentType.TEXT_PLAIN
 			} else {
 				request.setEntity(new StringEntity(new ObjectMapper()
 						.writeValueAsString(entity),
