@@ -1,0 +1,9 @@
+{
+  "data": {
+ 	"aggregateId": "21",
+  	"aggregateName": "stage",
+    "zone": "stage1",
+    "description": "Stage Environment 1",
+    "displayOrder": 99
+  }
+}

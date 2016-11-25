@@ -4,8 +4,6 @@
 package com.primeton.devops.test.util;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -42,17 +40,16 @@ public class JsonUtil {
 	 * @param json
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
-	public static Map<String, Object> toMap(String json) {
+	public static <T> T toObject(String json, Class<T> clazz) {
 		if (StringUtils.isBlank(json)) {
-			return new HashMap<>();
+			return null;
 		}
 		try {
-			return new ObjectMapper().readValue(json, Map.class);
+			return new ObjectMapper().readValue(json, clazz);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return new HashMap<>();
+		return null;
 	}
 	
 }

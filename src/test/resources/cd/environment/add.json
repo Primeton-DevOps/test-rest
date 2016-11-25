@@ -1,0 +1,8 @@
+{
+  "data": {
+  	"aggregateName": "stage12345",
+    "zone": "stage12345",
+    "description": "Stage Environment",
+    "displayOrder": 100
+  }
+}
