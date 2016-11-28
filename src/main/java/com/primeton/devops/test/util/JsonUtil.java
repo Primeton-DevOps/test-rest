@@ -21,18 +21,32 @@ public class JsonUtil {
 	/**
 	 * 
 	 * @param obj
+	 * @param prettyOutput
 	 * @return
 	 */
-	public static String toJson(Object obj) {
+	public static String toJson(Object obj, boolean prettyOutput) {
 		if (null == obj) {
 			return null;
 		}
 		try {
-			return new ObjectMapper().writeValueAsString(obj);
+			if (prettyOutput) {
+				return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(obj);
+			} else {
+				return new ObjectMapper().writeValueAsString(obj);
+			}
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	/**
+	 * 
+	 * @param obj
+	 * @return
+	 */
+	public static String toJson(Object obj) {
+		return toJson(obj, true);
 	}
 	
 	/**
