@@ -129,7 +129,10 @@ public class HttpClientUtil implements Constants {
 		if (null == restURL) {
 			return null;
 		}
-		return DEVOPS_URL + restURL;
+		if (restURL.startsWith("http://") || restURL.startsWith("https://")) {
+			return restURL;
+		}
+		return DEVOPS_URL + (restURL.charAt(0) == '/' ? "" : "/") + restURL;
 	}
 
 	/**
@@ -335,6 +338,15 @@ public class HttpClientUtil implements Constants {
 		 */
 		public void setContent(String content) {
 			this.content = content;
+		}
+		
+		/**
+		 * 
+		 * @param clazz
+		 * @return
+		 */
+		public <T> T toTarget(Class<T> clazz) {
+			return JsonUtil.toObject(content, clazz);
 		}
 
 		/* (non-Javadoc)
