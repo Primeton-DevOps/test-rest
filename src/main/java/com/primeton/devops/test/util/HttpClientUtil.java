@@ -8,6 +8,8 @@
 
 package com.primeton.devops.test.util;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
@@ -217,6 +219,12 @@ public class HttpClientUtil implements Constants {
 			} else if (entity instanceof String) {
 				request.setEntity(new StringEntity((String) entity,
 						ContentType.APPLICATION_JSON)); // ContentType.TEXT_PLAIN
+			} else if (entity instanceof File) {
+				FileInputStream input = new FileInputStream((File)entity);
+				String content = IOUtils.toString(input, "utf-8"); //$NON-NLS-1$
+				IOUtils.closeQuietly(input);
+				request.setEntity(new StringEntity(content, 
+						ContentType.APPLICATION_JSON));
 			} else {
 				request.setEntity(new StringEntity(new ObjectMapper()
 						.writeValueAsString(entity),
