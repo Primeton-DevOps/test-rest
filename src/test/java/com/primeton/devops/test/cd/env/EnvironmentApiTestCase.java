@@ -6,7 +6,7 @@
  * Created on Nov 25, 2016 2:05:02 PM
  *******************************************************************************/
 
-package com.primeton.devops.cd.env;
+package com.primeton.devops.test.cd.env;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 
 import com.primeton.devops.test.util.HttpClientUtil.HttpResult;
+import com.primeton.devops.test.framework.AbstractTestCase;
 import com.primeton.devops.test.util.JsonUtil;
 
 /**

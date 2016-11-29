@@ -6,7 +6,7 @@
  * Created on Nov 16, 2016 8:21:53 PM
  *******************************************************************************/
 
-package com.primeton.devops.cd.env;
+package com.primeton.devops.test.framework;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
