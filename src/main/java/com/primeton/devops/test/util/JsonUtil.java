@@ -4,6 +4,8 @@
 package com.primeton.devops.test.util;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -64,6 +66,34 @@ public class JsonUtil {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	/**
+	 * 
+	 * @param json
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public static String prettyMap(String json) {
+		if (StringUtils.isBlank(json)) {
+			return json;
+		}
+		Map data = toObject(json, Map.class);
+		return toJson(data, true);
+	}
+	
+	/**
+	 * 
+	 * @param json
+	 * @return
+	 */
+	@SuppressWarnings("rawtypes")
+	public static String prettyList(String json) {
+		if (StringUtils.isBlank(json)) {
+			return json;
+		}
+		List data = toObject(json, List.class);
+		return toJson(data, true);
 	}
 	
 }
