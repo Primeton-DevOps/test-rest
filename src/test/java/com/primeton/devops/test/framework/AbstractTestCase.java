@@ -106,8 +106,7 @@ public abstract class AbstractTestCase {
 	 * 
 	 * 1) JSON string; <br>
 	 * 2) Java Bean (Can serialize to JSON); <br>
-	 * 3) File path string, or File object, or classpath file
-	 *    <p>"/tmp/user.json"</p>
+	 * 3) File object, or classpath file string
 	 *    <p>new File("/tmp/user.json")</p>
 	 *    <p>"classpath:/test/user.json"</p>s
 	 * 
@@ -173,8 +172,7 @@ public abstract class AbstractTestCase {
 	 * 
 	 * 1) JSON string; <br>
 	 * 2) Java Bean (Can serialize to JSON); <br>
-	 * 3) File path string, or File object, or classpath file
-	 *    <p>"/tmp/user.json"</p>
+	 * 3) File object, or classpath file string
 	 *    <p>new File("/tmp/user.json")</p>
 	 *    <p>"classpath:/test/user.json"</p>
 	 *    
