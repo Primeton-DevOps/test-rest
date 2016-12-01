@@ -73,6 +73,18 @@ public class JsonUtil {
 	 * @param json
 	 * @return
 	 */
+	public static String prettyJson(String json) {
+		if (StringUtils.isBlank(json)) {
+			return json;
+		}
+		return json.trim().charAt(0) == '[' ? prettyList(json) : prettyMap(json); //$NON-NLS-1$
+	}
+	
+	/**
+	 * 
+	 * @param json
+	 * @return
+	 */
 	@SuppressWarnings("rawtypes")
 	public static String prettyMap(String json) {
 		if (StringUtils.isBlank(json)) {
