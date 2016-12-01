@@ -19,6 +19,11 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 	 * @see com.primeton.devops.test.framework.AbstractTestCase#test()
 	 */
 	public void test() throws Exception {
+		// 参考测试数据参考 
+		// classpath:/mysql/resources.sql
+		// classpath:/mysql/environments.sql
+		// 用于生成测试数据参考 
+		// https://github.com/Primeton-DevOps/order-manager/blob/master/src/test/java/com/primeton/devops/cd/cs/test/ServiceOrderDataGenerateTestCase.java
 		
 		// without page [POST]
 		// 查询开发一区物理机资源
