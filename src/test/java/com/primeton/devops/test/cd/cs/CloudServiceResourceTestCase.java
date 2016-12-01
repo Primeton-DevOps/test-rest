@@ -19,6 +19,9 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 	 * @see com.primeton.devops.test.framework.AbstractTestCase#test()
 	 */
 	public void test() throws Exception {
+		
+		// without page [POST]
+		
 		HttpResult result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
@@ -34,6 +37,29 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 		System.out.println();
 		
 		result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query3.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println();
+		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println();
+		
+		// with page [PUT]
+		
+		result = putRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/queryWithPage.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println();
+		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println();
+		
+		result = putRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/queryWithPage2.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println();
+		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println();
+		
+		result = putRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/queryWithPage3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
