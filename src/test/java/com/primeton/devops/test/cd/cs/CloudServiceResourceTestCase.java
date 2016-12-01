@@ -21,21 +21,21 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 	public void test() throws Exception {
 		
 		// without page [POST]
-		
+		// 查询开发一区物理机资源
 		HttpResult result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
-		
+		// 查询开发一区容器资源
 		result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query2.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
-		
+		//查询开发一区虚拟机资源
 		result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
