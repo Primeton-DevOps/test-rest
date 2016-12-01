@@ -55,10 +55,12 @@ public class HttpClientUtil implements Constants {
 	private HttpClientUtil() {
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(getClient());
-	}
-	
+	/**
+	 * 
+	 * HttpClient.
+	 *
+	 * @author ZhongWen Li (mailto:lizw@primeton.com)
+	 */
 	public static class HttpClient {
 		
 		private CloseableHttpClient client;
@@ -96,7 +98,7 @@ public class HttpClientUtil implements Constants {
 		List<NameValuePair> parameters = new ArrayList<>();
 		parameters.add(new BasicNameValuePair("userId", DEVOPS_USER)); //$NON-NLS-1$
 		parameters.add(new BasicNameValuePair("password", DEVOPS_PASS)); //$NON-NLS-1$
-		parameters.add(new BasicNameValuePair("original_url", DEVOPS_ORIGINAL_URL));
+		parameters.add(new BasicNameValuePair("original_url", DEVOPS_ORIGINAL_URL)); //$NON-NLS-1$
 		UrlEncodedFormEntity entity = null;
 		try {
 			entity = new UrlEncodedFormEntity(parameters);
@@ -107,14 +109,18 @@ public class HttpClientUtil implements Constants {
 		String session = null;
 		try {
 			HttpResponse response = client.execute(request);
-			Header header = response.getFirstHeader("Set-Cookie");
+			Header header = response.getFirstHeader("Set-Cookie"); //$NON-NLS-1$
 			for (HeaderElement e : header.getElements()) {
-				if (e.getName().startsWith("JSESSIONID")) {
+				if (e.getName().startsWith("JSESSIONID")) { //$NON-NLS-1$
 					session = e.getValue();
 				}
 			}
-			System.out.println(response.getStatusLine().getStatusCode());
-			
+			if (302 == response.getStatusLine().getStatusCode() || 200 == response.getStatusLine().getStatusCode()) {
+				System.out.println("Login EOS success."); //$NON-NLS-1$
+			} else {
+				System.err.println(String.format("Login EOS failed with status code %s.", //$NON-NLS-1$
+						response.getStatusLine().getStatusCode()));
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -131,10 +137,10 @@ public class HttpClientUtil implements Constants {
 		if (null == restURL) {
 			return null;
 		}
-		if (restURL.startsWith("http://") || restURL.startsWith("https://")) {
+		if (restURL.startsWith("http://") || restURL.startsWith("https://")) { //$NON-NLS-1$ //$NON-NLS-2$
 			return restURL;
 		}
-		return DEVOPS_URL + (restURL.charAt(0) == '/' ? "" : "/") + restURL;
+		return DEVOPS_URL + (restURL.charAt(0) == '/' ? "" : "/") + restURL; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	/**
@@ -153,11 +159,11 @@ public class HttpClientUtil implements Constants {
 		if (null == client || StringUtils.isEmpty(url)) {
 			return null;
 		}
-		if ("POST".equalsIgnoreCase(method)
-				|| "PUT".equalsIgnoreCase(method)) {
+		if ("POST".equalsIgnoreCase(method) //$NON-NLS-1$
+				|| "PUT".equalsIgnoreCase(method)) { //$NON-NLS-1$
 			return sendRequest(method, url, headers, null);
 		}
-		HttpRequestBase request = "DELETE".equalsIgnoreCase(method) ? new HttpDelete(
+		HttpRequestBase request = "DELETE".equalsIgnoreCase(method) ? new HttpDelete( //$NON-NLS-1$
 				url) : new HttpGet(url);
 		if (null != headers && !headers.isEmpty()) {
 			for (String name : headers.keySet()) {
@@ -166,7 +172,7 @@ public class HttpClientUtil implements Constants {
 		}
 		CloseableHttpResponse response = null;
 		try {
-			logger.debug(String.format("Send %s request to %s.", method, url));
+			logger.debug(String.format("Send %s request to %s.", method, url)); //$NON-NLS-1$
 			response = client.execute(request);
 			int status = response.getStatusLine().getStatusCode();
 			String content = getContent(response);
@@ -201,8 +207,8 @@ public class HttpClientUtil implements Constants {
 			if (null == entity) {
 				return sendRequest(method, url, headers);
 			} else {
-				throw new RuntimeException("Method error, can not send"
-						+ method + " request with entity data " + entity + ".");
+				throw new RuntimeException("Method error, can not send" //$NON-NLS-1$
+						+ method + " request with entity data " + entity + "."); //$NON-NLS-1$
 			}
 		}
 		HttpEntityEnclosingRequestBase request = "PUT".equalsIgnoreCase(method) ? new HttpPut(url)

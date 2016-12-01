@@ -26,21 +26,21 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 		
 		result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query2.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 		
 		result = postRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/query3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 		
 		// with page [PUT]
@@ -49,21 +49,21 @@ public class CloudServiceResourceTestCase extends AbstractTestCase {
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 		
 		result = putRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/queryWithPage2.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 		
 		result = putRequest(REST_PREFIX + "/cd/csresources/query", "classpath:/cd/cs/queryWithPage3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println();
-		System.out.println(JsonUtil.prettyList(result.getContent()));
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		System.out.println();
 	}
 
