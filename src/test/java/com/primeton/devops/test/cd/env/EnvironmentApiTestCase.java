@@ -34,32 +34,39 @@ public class EnvironmentApiTestCase extends AbstractTestCase {
 		HttpResult result = getRequest(REST_PREFIX + "/cd/environments");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = getRequest(REST_PREFIX + "/cd/environments?cascade=false");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = getRequest(REST_PREFIX + "/cd/environments?cascade=true");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = getRequest(REST_PREFIX + "/cd/environments?tenant=sysadmin");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = getRequest(REST_PREFIX + "/cd/environments?tenant=chinese");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		// Query
 		result = postRequest(REST_PREFIX + "/cd/environments/query", "classpath:/cd/environment/query.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		// ADD
 		result = postRequest(REST_PREFIX + "/cd/environments", "classpath:/cd/environment/add.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = getRequest(REST_PREFIX + "/cd/environments");
 		Assert.assertTrue(200 == result.getStatus());
@@ -79,11 +86,13 @@ public class EnvironmentApiTestCase extends AbstractTestCase {
 		Assert.assertTrue(200 == result.getStatus());
 		Assert.assertTrue(StringUtils.isNoneBlank(result.getContent()));
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		// DELETE
 		result = deleteRequest(REST_PREFIX + "/cd/environments/" + aggregateId);
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		System.out.println("Over");
 	}
