@@ -146,5 +146,39 @@ public class CloudServiceTestCase extends AbstractTestCase {
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 	}
+	
+	@Test
+	public void get() throws Exception {
+		HttpResult result = getRequest(REST_PREFIX + "/cd/cservices/1");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = getRequest(REST_PREFIX + "/cd/cservices/2");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = getRequest(REST_PREFIX + "/cd/cservices/1?cascade=false");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = getRequest(REST_PREFIX + "/cd/cservices/2?cascade=true&sss=xxx");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+	}
+	
+	@Test
+	public void delete() throws Exception {
+		HttpResult result = deleteRequest(REST_PREFIX + "/cd/cservices/11");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = deleteRequest(REST_PREFIX + "/cd/cservices/111");
+		System.out.println(result.getStatus());
+	}
 
 }
