@@ -77,35 +77,9 @@ public class JsonUtil {
 		if (StringUtils.isBlank(json)) {
 			return json;
 		}
-		return json.trim().charAt(0) == '[' ? prettyList(json) : prettyMap(json); //$NON-NLS-1$
-	}
-	
-	/**
-	 * 
-	 * @param json
-	 * @return
-	 */
-	@SuppressWarnings("rawtypes")
-	public static String prettyMap(String json) {
-		if (StringUtils.isBlank(json)) {
-			return json;
-		}
-		Map data = toObject(json, Map.class);
-		return toJson(data, true);
-	}
-	
-	/**
-	 * 
-	 * @param json
-	 * @return
-	 */
-	@SuppressWarnings("rawtypes")
-	public static String prettyList(String json) {
-		if (StringUtils.isBlank(json)) {
-			return json;
-		}
-		List data = toObject(json, List.class);
-		return toJson(data, true);
+		return json.trim().charAt(0) == '[' // $NON-NLS-1$
+				? toJson(toObject(json, List.class), true)
+				: toJson(toObject(json, Map.class), true);
 	}
 	
 }
