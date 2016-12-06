@@ -1,0 +1,98 @@
+{
+	"data" : {
+		"serviceName" : "DevOps Project Resources",
+		"projectId" : "10001",
+		"description" : "This is DevOps ...",
+		"ownerId" : "lizhongwen",
+		"notifyMode" : "email",
+		"cloudResources" : [
+			{
+				"resourceName" : "name1",
+				"aggregateId" : "1",
+				"serviceTypeId" : "1",
+				"details" : {
+					"items" : [
+						{
+							"resourceType" : "PM",
+							"resourceSize" : 2,
+							"attributes" : {
+								"osname" : "centos-7.2-x86_64",
+								"model" : "big",
+								"storage" : "1000GB",
+								"osuser" : "lizhongwen",
+								"ospass" : "lizhongwen",
+								"description" : "紧急！紧急！紧急！重要的事情说三遍！！！"
+							},
+							"advances" : {
+								"nettype" : "flat",
+								"cgroup" : "default",
+								"region" : "beijing",
+								"subnet" : "11.11.11.255"
+							}
+						}, {
+							"resourceType" : "PM",
+							"resourceSize" : 1,
+							"attributes" : {
+								"osname" : "ubuntu-16.10-x86_64",
+								"model" : "big",
+								"storage" : "1000GB",
+								"osuser" : "lizhongwen",
+								"ospass" : "lizhongwen",
+								"description" : "紧急！紧急！紧急！重要的事情说三遍！！！"
+							},
+							"advances" : {
+								"nettype" : "flat",
+								"cgroup" : "default",
+								"region" : "beijing",
+								"subnet" : "11.11.11.255"
+							}
+						}
+					]
+				}
+			}, {
+				"resourceName" : "name2",
+				"aggregateId" : "1",
+				"serviceTypeId" : "3",
+				"details" : {
+					"items" : [
+						{
+							"resourceType" : "VM",
+							"resourceSize" : 5,
+							"attributes" : {
+								"osname" : "centos-7.2-x86_64",
+								"model" : "big",
+								"storage" : "100GB",
+								"osuser" : "lizhongwen",
+								"ospass" : "lizhongwen",
+								"description" : "紧急！紧急！紧急！重要的事情说三遍！！！"
+							},
+							"advances" : {
+								"nettype" : "flat",
+								"cgroup" : "default",
+								"region" : "beijing",
+								"subnet" : "11.11.18.255"
+							}
+						}, {
+							"resourceType" : "VM",
+							"resourceSize" : 5,
+							"attributes" : {
+								"osname" : "ubuntu-16.10-x86_64",
+								"model" : "big",
+								"storage" : "100GB",
+								"osuser" : "lizhongwen",
+								"ospass" : "lizhongwen",
+								"description" : "紧急！紧急！紧急！重要的事情说三遍！！！"
+							},
+							"advances" : {
+								"nettype" : "flat",
+								"cgroup" : "default",
+								"region" : "beijing",
+								"subnet" : "11.11.18.255"
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}

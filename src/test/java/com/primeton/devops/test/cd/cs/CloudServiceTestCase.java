@@ -173,12 +173,26 @@ public class CloudServiceTestCase extends AbstractTestCase {
 	@Test
 	public void delete() throws Exception {
 		HttpResult result = deleteRequest(REST_PREFIX + "/cd/cservices/11");
-		Assert.assertTrue(200 == result.getStatus());
+		Assert.assertTrue(200 == result.getStatus() || 204 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		result = deleteRequest(REST_PREFIX + "/cd/cservices/111");
 		System.out.println(result.getStatus());
+		Assert.assertTrue(200 == result.getStatus() || 204 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+	}
+	
+	@Test
+	public void submit() throws Exception {
+		// 测试提交云服务申请单以及明细
+		HttpResult result = postRequest(REST_PREFIX + "/cd/cservices/order", 
+				"classpath:/cd/cs/service/order.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 	}
 
 }
