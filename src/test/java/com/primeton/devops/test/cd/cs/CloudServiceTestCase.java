@@ -27,54 +27,56 @@ public class CloudServiceTestCase extends AbstractTestCase {
 	@Override
 	public void test() throws Exception {
 		//
-		// without page
+		// without page [POST]
 		//
-		HttpResult result = postRequest(REST_PREFIX + "/cd/csservices", 
+		HttpResult result = postRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query2.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query4.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
-		System.out.println(JsonUtil.prettyJson(result.getContent()));result = postRequest(REST_PREFIX + "/cd/csservices", 
+		System.out.println(JsonUtil.prettyJson(result.getContent()));result = postRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query.json");
 		
 		//
-		// with page
+		// with page [PUT]
 		//
 		
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/query.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query2.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query3.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
 
-		result = postRequest(REST_PREFIX + "/cd/csservices", 
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query4.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
