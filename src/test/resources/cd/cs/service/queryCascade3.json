@@ -3,5 +3,6 @@
 		"projectId" : "",
 		"ownerId" : "",
 		"serviceStatus" : "OPENED"
-	}
+	},
+	"cascade" : true
 }

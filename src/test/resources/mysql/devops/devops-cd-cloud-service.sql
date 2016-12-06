@@ -2,28 +2,28 @@ INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJEC
 	VALUES ('1', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('2', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('2', 'name', 'devops', 'devops', 'sysadmin', 'OPEND', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('3', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('3', 'name', 'devops', 'devops', 'sysadmin', 'OPEND', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
 	VALUES ('4', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('5', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('5', 'name', 'devops', 'devops', 'sysadmin', 'REJECTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('6', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('6', 'name', 'devops', 'devops', 'sysadmin', 'REJECTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
 	VALUES ('7', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('8', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('8', 'name', 'devops', 'devops', 'sysadmin', 'DELETED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
-	VALUES ('9', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
+	VALUES ('9', 'name', 'devops', 'devops', 'sysadmin', 'DELETED', 'email', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');
 
 INSERT INTO `dps_dlv_cloud_service` (`CLOUD_SERVICE_ID`, `SERVICE_NAME`, `PROJECT_ID`, `DESCRIPTION`, `OWNER_ID`, `SERVICE_STATUS`, `NOTIFY_MODE`, `CREATE_USER`, `CREATE_TIME`, `UPDATE_USER`, `UPDATE_TIME`, `TENANT_ID`) 
 	VALUES ('10', 'name', 'devops', 'devops', 'sysadmin', 'SUBMITTED', 'sms', 'sysadmin', now(), 'sysadmin', now(), 'sysadmin');

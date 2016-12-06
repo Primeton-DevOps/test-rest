@@ -2,6 +2,7 @@
 	"data" : {
 		"projectId" : "",
 		"ownerId" : "",
-		"serviceStatus" : "OPENED"
-	}
+		"serviceStatus" : ""
+	},
+	"cascade" : true
 }

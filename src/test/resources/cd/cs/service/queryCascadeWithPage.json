@@ -3,5 +3,8 @@
 		"projectId" : "devops",
 		"ownerId" : "sysadmin",
 		"serviceStatus" : "OPENED"
-	}
+	},
+	"pageIndex" : 0,
+	"pageSize" : 10,
+	"cascade" : true
 }

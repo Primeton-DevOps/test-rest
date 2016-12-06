@@ -2,8 +2,9 @@
 	"data" : {
 		"projectId" : "",
 		"ownerId" : "",
-		"serviceStatus" : "OPENED"
+		"serviceStatus" : ""
 	},
 	"pageIndex" : 0,
-	"pageSize" : 10
+	"pageSize" : 10,
+	"cascade" : true
 }

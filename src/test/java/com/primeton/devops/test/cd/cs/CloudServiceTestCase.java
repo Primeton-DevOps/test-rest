@@ -9,6 +9,7 @@
 package com.primeton.devops.test.cd.cs;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 import com.primeton.devops.test.framework.AbstractTestCase;
 import com.primeton.devops.test.util.JsonUtil;
@@ -51,8 +52,7 @@ public class CloudServiceTestCase extends AbstractTestCase {
 				"classpath:/cd/cs/service/query4.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
-		System.out.println(JsonUtil.prettyJson(result.getContent()));result = postRequest(REST_PREFIX + "/cd/cservices/query", 
-				"classpath:/cd/cs/service/query.json");
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
 		
 		//
 		// with page [PUT]
@@ -78,6 +78,69 @@ public class CloudServiceTestCase extends AbstractTestCase {
 
 		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
 				"classpath:/cd/cs/service/query4.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+	}
+	
+	/**
+	 * 
+	 * @throws Exception
+	 */
+	@Test
+	public void cascade() throws Exception {
+		//
+		// without page [POST]
+		//
+		HttpResult result = postRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade2.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade3.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+
+		result = postRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade4.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		//
+		// with page [PUT]
+		//
+		
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade2.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade3.json");
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+
+		result = putRequest(REST_PREFIX + "/cd/cservices/query", 
+				"classpath:/cd/cs/service/queryCascade4.json");
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
