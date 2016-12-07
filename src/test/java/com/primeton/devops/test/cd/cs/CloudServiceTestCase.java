@@ -8,6 +8,9 @@
 
 package com.primeton.devops.test.cd.cs;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -185,6 +188,7 @@ public class CloudServiceTestCase extends AbstractTestCase {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void submit() throws Exception {
 		// 测试提交云服务申请单以及明细
@@ -193,6 +197,20 @@ public class CloudServiceTestCase extends AbstractTestCase {
 		Assert.assertTrue(200 == result.getStatus());
 		System.out.println(result.getContent());
 		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
+		// 更新订单
+		Map<String, Object> data = JsonUtil.toObject(result.getContent(), Map.class);
+		data.put("projectId", "10002");
+		data.put("description", "updated");
+		data.put("notifyMode", "sms");
+		Map<String, Object> entity = new HashMap<>();
+		entity.put("data", data);
+		
+		result = putRequest(REST_PREFIX + "/cd/cservices/order", entity);
+		Assert.assertTrue(200 == result.getStatus());
+		System.out.println(result.getContent());
+		System.out.println(JsonUtil.prettyJson(result.getContent()));
+		
 	}
-
+	
 }
