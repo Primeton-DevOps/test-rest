@@ -1,0 +1,47 @@
+[{
+	"control" : "combobox",
+	"multiSelect" : false,
+	"defaultValue" : "zh_CN",
+	"showNullItem" : false,
+	"values" : [{
+		"value" : "zh_CN",
+		"text" : "zh_CN"
+	}, {
+		"value" : "en_US",
+		"text" : "en_US"
+	}, {
+		"value" : "zh_TW",
+		"text" : "zh_TW"
+	}]
+}, {
+	"control" : "checkboxlist",
+	"repeatItems" : 1,
+	"repeatLayout" : "flow",
+	"defaultValue" : "zh_CN",
+	"values" : [{
+		"value" : "zh_CN",
+		"text" : "zh_CN"
+	}, {
+		"value" : "en_US",
+		"text" : "en_US"
+	}, {
+		"value" : "zh_TW",
+		"text" : "zh_TW"
+	}]
+}, {
+	"control" : "radiobuttonlist",
+	"repeatItems" : 3,
+	"repeatLayout" : "table",
+	"repeatDirection" : "vertical",
+	"defaultValue" : "zh_CN",
+	"values" : [{
+		"value" : "zh_CN",
+		"text" : "zh_CN"
+	}, {
+		"value" : "en_US",
+		"text" : "en_US"
+	}, {
+		"value" : "zh_TW",
+		"text" : "zh_TW"
+	}]
+}]
